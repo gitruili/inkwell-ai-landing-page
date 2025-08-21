@@ -1,6 +1,7 @@
 // src/components/Hero.tsx
 "use client";
 import React from 'react';
+import { useT } from '@/i18n';
 
 interface HeroProps {
   headline: string;
@@ -9,6 +10,9 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ headline, subheadline, onCtaClick }) => {
+  const t = useT();
+  const cta = t.hero.cta;
+
   return (
     <section className="relative h-screen flex items-center justify-center text-center bg-gray-50 overflow-hidden">
       <div className="relative z-10 max-w-4xl mx-auto px-4">
@@ -22,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ headline, subheadline, onCtaClick }) => {
           onClick={onCtaClick}
           className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-transform transform hover:scale-105"
         >
-          Start Free Trial
+          {cta}
         </button>
       </div>
     </section>
@@ -30,4 +34,3 @@ const Hero: React.FC<HeroProps> = ({ headline, subheadline, onCtaClick }) => {
 };
 
 export default Hero;
-
