@@ -19,7 +19,7 @@ export default function PageAClient() {
   };
 
   return (
-    <main>
+    <main id="main">
       <Header />
       <Hero headline={t.variants.A.headline} subheadline={t.variants.A.subheadline} onCtaClick={handleCtaClick} />
       <Features />
@@ -28,4 +28,3 @@ export default function PageAClient() {
     </main>
   );
 }
-
